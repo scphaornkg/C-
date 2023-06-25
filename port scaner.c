@@ -4,7 +4,7 @@
 #include <pthread.h>
 #include <unistd.h>
 #include <stdlib.h>
-#define DEST_IP "100.72.107.105"
+#define DEST_IP "127.0.0.1"
 int ia[13];
 void* child();
 void* child1();
@@ -25,7 +25,7 @@ int main()
     
     if(WSAStartup(wVersionRequested,&wsaData)!= 0)
     {
-        printf("ªì©l¤ÆWinSock¥¢±Ñ\n") ;
+        printf("åˆå§‹åŒ–WinSockå¤±æ•—\n") ;
         return 0;
     }
     
@@ -47,29 +47,29 @@ int main()
     ia[12]=inend;
     
     int sockfd,n;
-    pthread_t a; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&a, NULL, child, NULL); // «Ø¥ß¤l°õ¦æºü
-     pthread_t b; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&b, NULL, child1, "NULL"); // «Ø¥ß¤l°õ¦æºü
+    pthread_t a; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&a, NULL, child, NULL); // å»ºç«‹å­åŸ·è¡Œç·’
+     pthread_t b; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&b, NULL, child1, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
       
-       pthread_t c; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&c, NULL, child2, "NULL"); // «Ø¥ß¤l°õ¦æºü
+       pthread_t c; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&c, NULL, child2, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
       
-       pthread_t d; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&d, NULL, child3, "NULL"); // «Ø¥ß¤l°õ¦æºü
-       pthread_t e; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&e, NULL, child4, "NULL"); // «Ø¥ß¤l°õ¦æºü
-       pthread_t f; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&f, NULL, child5, "NULL"); // «Ø¥ß¤l°õ¦æºü
-     pthread_t g; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&g, NULL, child6, "NULL"); // «Ø¥ß¤l°õ¦æºü
-     pthread_t h; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&h, NULL, child7, "NULL"); // «Ø¥ß¤l°õ¦æºü
-       pthread_t ii; // «Å§i pthread ÅÜ¼Æ"NULL"); // «Ø¥ß¤l°õ¦æºü
+       pthread_t d; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&d, NULL, child3, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
+       pthread_t e; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&e, NULL, child4, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
+       pthread_t f; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&f, NULL, child5, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
+     pthread_t g; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&g, NULL, child6, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
+     pthread_t h; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&h, NULL, child7, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
+       pthread_t ii; // å®£å‘Š pthread è®Šæ•¸"NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
        
-       pthread_create(&ii, NULL, child8, "NULL"); // «Ø¥ß¤l°õ¦æºü
-       pthread_t jj; // «Å§i pthread ÅÜ¼Æ
-      pthread_create(&jj, NULL, child9, "NULL"); // «Ø¥ß¤l°õ¦æºü
+       pthread_create(&ii, NULL, child8, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
+       pthread_t jj; // å®£å‘Š pthread è®Šæ•¸
+      pthread_create(&jj, NULL, child9, "NULL"); // å»ºç«‹å­åŸ·è¡Œç·’
       j=ia[2];
       int start=ia[1];
     for(start;start<j;start++)
@@ -92,20 +92,20 @@ int main()
         port[start]=start;
       
     }
-    pthread_join(a, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(b, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(c, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(d, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(e, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(f, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(g, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(h, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(ii, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
-    pthread_join(jj, NULL); // µ¥«İ¤l°õ¦æºü°õ¦æ§¹¦¨
+    pthread_join(a, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(b, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(c, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(d, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(e, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(f, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(g, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(h, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(ii, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
+    pthread_join(jj, NULL); // ç­‰å¾…å­åŸ·è¡Œç·’åŸ·è¡Œå®Œæˆ
     for(in=in;in<inend;in++)
     {
       if(port[in]!=-1)
-        printf("%d ¶}±Ò\n",port[in]);
+        printf("%d é–‹å•Ÿ\n",port[in]);
     }
     system("pause");
     return 0;
@@ -135,7 +135,7 @@ void* child()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 
@@ -166,7 +166,7 @@ void* child1()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 void* child2()
 {
@@ -195,7 +195,7 @@ void* child2()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 void* child3()
@@ -225,7 +225,7 @@ void* child3()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü	
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’	
 }
 
 void* child4()
@@ -253,7 +253,7 @@ void* child4()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 void* child5()
@@ -283,7 +283,7 @@ void* child5()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 void* child6()
@@ -311,7 +311,7 @@ void* child6()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 void* child7()
@@ -341,7 +341,7 @@ void* child7()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 void* child8()
@@ -369,7 +369,7 @@ void* child8()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’
 }
 
 void* child9()
@@ -396,6 +396,6 @@ void* child9()
       else
         port[i]=i;
     }
-  pthread_exit(NULL); // Â÷¶}¤l°õ¦æºü 
+  pthread_exit(NULL); // é›¢é–‹å­åŸ·è¡Œç·’ 
 
 }
